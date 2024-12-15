@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Guide</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+        }
+
+        header {
+            background-color: #0078d4;
+            color: white;
+            padding: 1rem 2rem;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        nav {
+            background-color: #005a9e;
+            padding: 0.5rem;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 1rem;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            padding: 2rem;
+        }
+
+        .content {
+            flex: 3;
+            padding: 1rem;
+        }
+
+        .card-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+        }
+
+        .card {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+            transition: transform 0.3s;
+        }
+
+        .card img {
+            width: 100%;
+	    height: 80%;
+            display: block;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+        }
+
+        .card p {
+            padding: 0.5rem;
+            text-align: center;
+        }
+
+        .bot-section {
+            display: none;
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 300px;
+            height: 400px;
+            background-color: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            z-index: 1000;
+        }
+
+        .bot-section iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            border-radius: 10px;
+        }
+
+        .chat-icon {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 60px;
+            height: 60px;
+            background-color: #0078d4;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            z-index: 1001;
+        }
+
+        .chat-icon img {
+            width: 30px;
+            height: 30px;
+        }
+
+        footer {
+            text-align: center;
+            background-color: #0078d4;
+            color: white;
+            padding: 1rem;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+    <script>
+        function toggleBot() {
+            const botSection = document.querySelector('.bot-section');
+            botSection.style.display = botSection.style.display === 'none' ? 'block' : 'none';
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Travel Guide</h1>
+        <p>Your companion for exploring the world</p>
+    </header>
+
+    <nav>
+        <a href="#destinations">Destinations</a>
+        <a href="#itineraries">Itineraries</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <div class="container">
+        <div class="content">
+            <h2>Welcome to Travel Guide</h2>
+            <p>Discover your next adventure with personalized recommendations, travel tips, and more. Explore destinations, plan your trip, and get assistance from our intelligent travel bot.</p>
+
+            <h3 id="destinations">Top Destinations</h3>
+            <div class="card-container">
+                <div class="card">
+                    <img src="https://images.pexels.com/photos/457882/pexels-photo-457882.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Destination 1">
+                    <p>Beautiful Beaches</p>
+                </div>
+                <div class="card">
+                    <img src="https://images.pexels.com/photos/67517/pexels-photo-67517.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Destination 2">
+                    <p>Mountain Adventures</p>
+                </div>
+                <div class="card">
+                    <img src="https://images.pexels.com/photos/466685/pexels-photo-466685.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Destination 3">
+                    <p>City Escapes</p>
+                </div>
+                <div class="card">
+                    <img src="https://images.pexels.com/photos/29781293/pexels-photo-29781293/free-photo-of-ancient-ruins-of-celsus-library-in-ephesus.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Destination 4">
+                    <p>Historical Sites</p>
+                </div>
+                <div class="card">
+                    <img src="https://images.pexels.com/photos/1450355/pexels-photo-1450355.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Destination 5">
+                    <p>Exotic Islands</p>
+                </div>
+                <div class="card">
+                    <img src="https://www.thomascook.in/blog/wp-content/uploads/2023/04/jungle-safari-1.jpg" alt="Destination 6">
+                    <p>Wildlife Safaris</p>
+                </div>
+            </div>
+
+            <h3 id="itineraries">Custom Itineraries</h3>
+            <p>Plan your trip with day-by-day itineraries tailored to your interests.</p>
+        </div>
+    </div>
+
+    <div class="bot-section">
+        <iframe src="https://copilotstudio.microsoft.com/environments/Default-a2f6f302-0c41-4bad-ba60-55efcb9fed5a/bots/cr119_travelGuide/webchat?__version__=2" frameborder="0" title="Travel Guide Bot"></iframe>
+    </div>
+
+    <div class="chat-icon" onclick="toggleBot()">
+        <img src="https://cdn-icons-png.flaticon.com/128/1041/1041916.png" alt="Chat Icon">
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Travel Guide. All rights reserved.</p>
+    </footer>
+</body>
+</html>
